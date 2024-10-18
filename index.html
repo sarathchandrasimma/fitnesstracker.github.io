@@ -196,15 +196,23 @@
     <!-- Link to custom JS -->
     <script src="script.js"></script>
     <script>
-      // Fetch a random image from Unsplash for the background
-      const fetchBackgroundImage = async () => {
-        const response = await fetch(
-          "https://source.unsplash.com/random/1920x1080/?fitness,workout"
-        );
-        document.body.style.backgroundImage = `url(${response.url})`;
-      };
-
-      fetchBackgroundImage();
+        const UNSPLASH_ACCESS_KEY = 'DXm0k47uqZAYlpeGOtFFx49AJ65bVuVYfa8sTytYi9U';  // Replace with your actual API key
+    
+        const fetchBackgroundImage = async () => {
+            const endpoint = `https://api.unsplash.com/photos/random?query=fitness&client_id=${UNSPLASH_ACCESS_KEY}&orientation=landscape`;
+            try {
+                const response = await fetch(endpoint);
+                const data = await response.json();
+                const imageUrl = data.urls.full;
+                document.body.style.backgroundImage = `url(${imageUrl})`;
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundPosition = 'center';
+            } catch (error) {
+                console.error('Error fetching background image:', error);
+            }
+        };
+    
+        fetchBackgroundImage();
     </script>
   </body>
 </html>

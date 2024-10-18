@@ -1,0 +1,47 @@
+body {
+    background: rgba(255, 255, 255, 0.9); /* Background color */
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: background 0.5s ease-in-out;
+}
+
+.navbar {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.8); /* Container background color */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.goal-card {
+    cursor: pointer;
+}
+
+footer {
+    backdrop-filter: blur(10px);
+}
+
+.dark-theme {
+    background-color: #121212; /* Dark mode background */
+    color: #e0e0e0; /* Dark mode text color */
+}
+
+.light-theme {
+    color: #333; /* Light mode text color */
+}
+
+.btn {
+    border-radius: 20px;
+}
